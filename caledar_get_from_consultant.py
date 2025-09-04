@@ -212,7 +212,8 @@ if __name__ == "__main__":
     # import json, pathlib
     # pathlib.Path(f"calendar_{year}.json").write_text(json.dumps(day_map, ensure_ascii=False, indent=2), encoding="utf-8")
     # Сохранить в JSON (day_of_year -> status)
-    with open(f"calendar_{year}.json", "w", encoding="utf-8") as f:
+    j_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'babki')) + '/bots'
+    with open(f"{j_path}/calendar_{year}.json", "w", encoding="utf-8") as f:
         json.dump(day_map, f, ensure_ascii=False, indent=2)
 
     # Диагностика извлечения (какие конструкции были распознаны)
